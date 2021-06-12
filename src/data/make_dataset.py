@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import click
 import logging
-import pandas as pd
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
 
@@ -15,10 +14,6 @@ def main(input_filepath, output_filepath):
     """
     logger = logging.getLogger(__name__)
     logger.info('making final data set from raw data')
-    input_filepath = input_filepath
-    raw_data = pd.read_csv(input_filepath, compression="gzip")
-    raw_data['event_time'] = pd.to_datetime(raw_data['event_time'], format="%Y-%m-%d %H:%M:%S")
-
 
 
 if __name__ == '__main__':
